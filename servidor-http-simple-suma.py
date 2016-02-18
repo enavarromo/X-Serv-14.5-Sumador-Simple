@@ -28,6 +28,7 @@ try:
             Sumando1 = int(Rx)
             recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
             "<html><body><h1>Sumador:</h1>" +
+            "<hr>" +
             "<p>Primer sumando: " + str(Sumando1) + "</p>" +
             "</body></html>\r\n")
             recvSocket.send("<html><body><h4>Introduzca segundo sumando</h4>"+
@@ -39,11 +40,13 @@ try:
             Sumando2 = int(Rx)
             recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
             "<html><body><h1>Sumador:</h1>" +
+            "<hr>" +
             "<p>Primer sumando: " + str(Sumando1) + "</p>" +
             "<p>Segundo sumando: " + str(Sumando2) + "</p>" +
             "</body></html>\r\n")
-            recvSocket.send(str(Sumando1)+" + "+str(Sumando2)+" = "+
-            str((Sumando1+Sumando2)) +
+            recvSocket.send("<em><b><big><i><b><strong><ins>"+str(Sumando1)+" + "+str(Sumando2)+
+            " = "+
+            str((Sumando1+Sumando2)) + "</em></b></big></i></b></strong></ins>" +
             "</body></html>\r\n")
 
             Estado = 'Sumando1'
